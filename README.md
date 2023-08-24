@@ -1,70 +1,47 @@
-<p align="center">
-  <a href="https://www.medusajs.com">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/59018053/229103275-b5e482bb-4601-46e6-8142-244f531cebdb.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
-    <img alt="Medusa logo" src="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
-    </picture>
-  </a>
-</p>
-<h1 align="center">
-  Medusa
-</h1>
+# Order Reactions Widget Example
 
-<h4 align="center">
-  <a href="https://docs.medusajs.com">Documentation</a> |
-  <a href="https://www.medusajs.com">Website</a>
-</h4>
+This repo shows how you can use custom Entities, Services, Endpoints, and Admin Extensions to build an Order Reaction feature in [Medusa](https://medusajs.com/).
 
-<p align="center">
-  Building blocks for digital commerce
-</p>
-<p align="center">
-  <a href="https://github.com/medusajs/medusa/blob/master/CONTRIBUTING.md">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs welcome!" />
-  </a>
-    <a href="https://www.producthunt.com/posts/medusa"><img src="https://img.shields.io/badge/Product%20Hunt-%231%20Product%20of%20the%20Day-%23DA552E" alt="Product Hunt"></a>
-  <a href="https://discord.gg/xpCwq3Kfn8">
-    <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Discord Chat" />
-  </a>
-  <a href="https://twitter.com/intent/follow?screen_name=medusajs">
-    <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Follow%20@medusajs" alt="Follow @medusajs" />
-  </a>
-</p>
+https://github.com/srindom/medusa-order-reactions/assets/7554214/10540e0c-f906-4205-bf5c-3b583baf9083
 
-## Compatibility
+## Get Started
 
-This starter is compatible with versions >= 1.8.0 of `@medusajs/medusa`. 
+```
+git clone git@github.com:srindom/medusa-order-reactions.git
+cd medusa-order-reactions
+yarn
+medusa migrations run
+yarn seed
+yarn dev
+```
 
-## Getting Started
+The Admin Panel will open and you can log in with email: `admin@medusa-test.com` password: `supersecret`. Create an order and visit the Order Details page to see the Order Reactions widget.
 
-Visit the [Quickstart Guide](https://docs.medusajs.com/create-medusa-app) to set up a server.
+## Overview
 
-Visit the [Docs](https://docs.medusajs.com/development/backend/prepare-environment) to learn more about our system requirements.
+The Order Reactions widget allows admin users to add Emoji reactions to Orders in their store. This is a fun little feature but is unlikely to bring a ton of business value to merchants. The approach used in building this feature is, however, a good example of how you can create deep customizations in Medusa that include both backend logic and a merchant UI, thereby tailoring Medusa to complex business requirements and bringing value to merchants that other platforms can't easily match.
 
-## What is Medusa
+### Who is this repo for?
+This repo is for developers who want to build customizations in Medusa, and is meant to serve as inspiration for how to get started.
 
-Medusa is a set of commerce modules and tools that allow you to build rich, reliable, and performant commerce applications without reinventing core commerce logic. The modules can be customized and used to build advanced ecommerce stores, marketplaces, or any product that needs foundational commerce primitives. All modules are open-source and freely available on npm.
+### Features used
+- Custom Entity 
+  - Example: [src/models/order-reaction.ts](https://github.com/srindom/medusa-order-reactions/blob/main/src/models/order-reaction.ts) 
+  - [Visit Docs](https://docs.medusajs.com/development/entities/overview)
+- Custom Service 
+  - Example: [src/services/order-reaction.ts](https://github.com/srindom/medusa-order-reactions/blob/main/src/services/order-reaction.ts) 
+  - [Visit Docs](https://docs.medusajs.com/development/services/overview)
+- Custom Endpoints 
+  - Example: [src/api/order-reactions](https://github.com/srindom/medusa-order-reactions/blob/main/src/api/order-reactions) 
+  - [Visit Docs](https://docs.medusajs.com/development/endpoints/overview)
+- Admin Widget 
+  - Example: [src/admin/widgets/order-widget.tsx](https://github.com/srindom/medusa-order-reactions/blob/main/src/admin/widgets/order-widget.tsx) 
+  - [Visit Docs](https://docs.medusajs.com/admin/widgets)
+- Medusa UI 
+  - Example: [src/admin/widgets/order-widget.tsx](https://github.com/srindom/medusa-order-reactions/blob/main/src/admin/widgets/order-widget.tsx) 
+  - [Visit Docs](https://docs.medusajs.com/ui)
 
-Learn more about [Medusa’s architecture](https://docs.medusajs.com/development/fundamentals/architecture-overview) and [commerce modules](https://docs.medusajs.com/modules/overview) in the Docs.
-
-## Roadmap, Upgrades & Plugins
-
-You can view the planned, started and completed features in the [Roadmap discussion](https://github.com/medusajs/medusa/discussions/categories/roadmap).
-
-Follow the [Upgrade Guides](https://docs.medusajs.com/upgrade-guides/) to keep your Medusa project up-to-date.
-
-Check out all [available Medusa plugins](https://medusajs.com/plugins/).
-
-## Community & Contributions
-
-The community and core team are available in [GitHub Discussions](https://github.com/medusajs/medusa/discussions), where you can ask for support, discuss roadmap, and share ideas.
-
-Join our [Discord server](https://discord.com/invite/medusajs) to meet other community members.
-
-## Other channels
-
-- [GitHub Issues](https://github.com/medusajs/medusa/issues)
-- [Twitter](https://twitter.com/medusajs)
-- [LinkedIn](https://www.linkedin.com/company/medusajs)
-- [Medusa Blog](https://medusajs.com/blog/)
+## More resources
+- [Medusa Website](https://medusajs.com/)
+- [Medusa Docs](https://docs.medusajs.com/)
+- [Medusa Nextjs Storefront Starter Template](https://medusajs.com/nextjs-commerce/)
