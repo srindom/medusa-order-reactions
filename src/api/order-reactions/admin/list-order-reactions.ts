@@ -1,4 +1,3 @@
-import { UserService } from "@medusajs/medusa";
 import OrderReactionService from "../../../services/order-reaction";
 
 export const config = {
@@ -10,7 +9,7 @@ export default async (req, res) => {
   const reactionService: OrderReactionService = req.scope.resolve(
     "orderReactionService"
   );
-  const userService: UserService = req.scope.resolve("userService");
+  const userService = req.scope.resolve("userService");
 
   const { order_id, reaction } = req.query;
   const take = req.query.limit ? parseInt(req.query.limit) : 10;
